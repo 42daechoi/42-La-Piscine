@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ifconfig -a ether | grep ether | cut -d" " -f2
+ifconfig -a ether | grep ether | grep -v media  | cut -d" " -f2
