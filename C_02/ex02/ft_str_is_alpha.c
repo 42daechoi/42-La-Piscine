@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:00:44 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:36:46 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/13 14:17:55 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/13 14:40:12 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-void	ft_ft(int *nbr)
+int	ft_str_is_alpha(char *str)
 {
-	*nbr = 42;
-}
+	int	i;
 
-int main()
-{
-	int *n;
-
-	*n = 0;
-	ft_ft(n);
-	printf("%d", *n);
-	return 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 97 && str[i] <= 122) || (str[i] >= 65 && str[i] <= 90))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }

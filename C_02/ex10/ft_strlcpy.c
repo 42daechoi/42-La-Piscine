@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:00:44 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:36:46 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/13 16:49:54 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/13 18:23:41 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-void	ft_ft(int *nbr)
-{
-	*nbr = 42;
-}
 
-int main()
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int *n;
+	unsigned int	i;
 
-	*n = 0;
-	ft_ft(n);
-	printf("%d", *n);
-	return 0;
+	i = 0;
+	while (i < size - 1 && size != 0)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (i);
 }

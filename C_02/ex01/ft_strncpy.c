@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:00:44 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:36:46 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/13 13:48:07 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/13 18:23:04 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-void	ft_ft(int *nbr)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	*nbr = 42;
-}
+	int	i;
 
-int main()
-{
-	int *n;
-
-	*n = 0;
-	ft_ft(n);
-	printf("%d", *n);
-	return 0;
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 15:00:44 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:36:46 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/13 15:04:30 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/13 15:06:30 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-void	ft_ft(int *nbr)
-{
-	*nbr = 42;
-}
 
-int main()
+int	ft_str_is_uppercase(char *str)
 {
-	int *n;
+	int	i;
 
-	*n = 0;
-	ft_ft(n);
-	printf("%d", *n);
-	return 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }
