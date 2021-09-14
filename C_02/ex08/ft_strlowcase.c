@@ -6,10 +6,10 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:40:36 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 21:45:11 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/14 17:19:14 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include<stdio.h>
 char	*ft_strlowcase(char *str)
 {
 	int	i;
@@ -22,4 +22,12 @@ char	*ft_strlowcase(char *str)
 		i++;
 	}
 	return (str);
+}
+
+int main()
+{
+	char c[] = "FDSKNB";
+	ft_strlowcase(c);
+	printf("%s", c);
+	return 0;
 }

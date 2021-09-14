@@ -6,9 +6,10 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:13:17 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 15:39:10 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/14 17:15:17 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<stdio.h>
 char	*ft_strupcase(char *str)
 {
 	int	i;
@@ -21,4 +22,11 @@ char	*ft_strupcase(char *str)
 		i++;
 	}
 	return (str);
+}
+
+int main(){
+	char c[] = "aasDFSAGBfdHHsafd";
+	ft_strupcase(c);
+	printf("%s", c);
+	return 0;
 }

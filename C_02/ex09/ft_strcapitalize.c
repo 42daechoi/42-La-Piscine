@@ -6,10 +6,10 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:44:04 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 16:51:12 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/14 17:47:51 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include<stdio.h>
 char	*ft_strlowcase(char *str)
 {
 	int	i;
@@ -57,3 +57,11 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
+
+int main() {
+	char s[] = "salut, comment tu vas ? 42mots quareate-deux; cinquante+et+un";
+	ft_strcapitalize(s);
+	printf("%s", s);
+	return 0;
+}
+

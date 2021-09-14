@@ -6,11 +6,11 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 15:06:43 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/12 15:07:50 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/14 11:29:36 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr);
+void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
