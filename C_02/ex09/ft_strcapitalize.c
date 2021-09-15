@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:44:04 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/14 17:47:51 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:44:51 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -59,7 +59,7 @@ char	*ft_strcapitalize(char *str)
 }
 
 int main() {
-	char s[] = "salut, comment tu vas ? 42mots quareate-deux; cinquante+et+un";
+	char s[] = "8{X>]V=Cfe7xu)E=X5(VIet7j)+YZnvm9z??*Rg3n'Jx)Ncn#Xmma9e?_?PhQD'3zgff1tWvj7q^Nqk    3ngo1y`{&Qvoo;P`    S+S)";
 	ft_strcapitalize(s);
 	printf("%s", s);
 	return 0;

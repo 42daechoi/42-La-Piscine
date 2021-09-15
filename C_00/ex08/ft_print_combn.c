@@ -6,12 +6,16 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 10:50:29 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/14 15:28:39 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/14 23:15:10 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_print_num(int *num, int n)
 {
@@ -20,7 +24,7 @@ void	ft_print_num(int *num, int n)
 	i = 0;
 	while (i < n)
 	{
-		write(1, &num[i], 1);
+		ft_putchar(num[i] + 48);
 		i++;
 	}
 }
@@ -28,9 +32,10 @@ void	ft_print_num(int *num, int n)
 void	ft_set_num(int *num, int digit, int n)
 {
 	int	i;
-	while(1)
+
+	while (1)
 	{
-		if (num[digit] == 10 - n + digit)
+		while (num[digit] == 10 - n + digit)
 			digit--;
 		if (digit < 0)
 			break ;
@@ -41,6 +46,9 @@ void	ft_set_num(int *num, int digit, int n)
 			num[digit + 1] = num[digit] + 1;
 			i++;
 		}
+		digit = n - 1;
+		ft_putchar(',');
+		ft_putchar(' ');
 		ft_print_num(num, n);
 	}
 }
@@ -62,6 +70,6 @@ void	ft_print_combn(int n)
 }
 
 int main() {
-	ft_print_combn(3);
+	ft_print_combn(9);
 	return 0;
 }

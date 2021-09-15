@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   test_putstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:28:43 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/15 15:36:27 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:35:08 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
+
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -20,4 +21,9 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+}
+
+int main(){
+	char c[] = "hello world";
+	ft_putstr(c);
 }
