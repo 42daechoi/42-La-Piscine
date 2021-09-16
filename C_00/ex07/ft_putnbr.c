@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 21:32:08 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/14 19:43:01 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 15:56:58 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ void	ft_putnbr(int nb)
 		c = nb % 10 + 48;
 		write(1, &c, 1);
 	}
+}
+
+int main()
+{
+	ft_putnbr(-2147483648);
+	ft_putnbr(0);
 }

@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 16:50:05 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/11 18:45:57 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 15:54:42 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
@@ -38,4 +38,9 @@ void	ft_print_comb2(void)
 		}
 		a++;
 	}
+}
+
+int main()
+{
+	ft_print_comb2();
 }

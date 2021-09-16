@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:44:04 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/15 15:44:51 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 20:27:46 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -40,10 +40,10 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 32 && str[i] <= 47
-			|| str[i] >= 58 && str[i] <= 64
-			|| str[i] >= 91 && str[i] <= 96
-			|| str[i] >= 123 && str[i] <= 126)
+		if ((str[i] >= 0 && str[i] <= 47)
+			|| (str[i] >= 58 && str[i] <= 64)
+			|| (str[i] >= 91 && str[i] <= 96)
+			|| (str[i] >= 123 && str[i] <= 127))
 		{
 			i++;
 			if (str[i] == '\0')
@@ -59,7 +59,7 @@ char	*ft_strcapitalize(char *str)
 }
 
 int main() {
-	char s[] = "8{X>]V=Cfe7xu)E=X5(VIet7j)+YZnvm9z??*Rg3n'Jx)Ncn#Xmma9e?_?PhQD'3zgff1tWvj7q^Nqk    3ngo1y`{&Qvoo;P`    S+S)";
+	char s[] = "Z$Umc@Fq(Pk=W@Hmu~K-n    efy:X`3u#S{Fk$";
 	ft_strcapitalize(s);
 	printf("%s", s);
 	return 0;

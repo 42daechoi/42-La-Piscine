@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:59:05 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/16 00:41:13 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 20:53:06 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
@@ -91,11 +91,7 @@ int	ft_check_base(char *base)
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	nbr;
-
-	nbr = ft_atoi(str);
-	if (ft_check_base(base) == 0)
-		ft_set_notation_recursive(base, nbr, ft_base_len(base));
+	
 }
 
 int main(int argv, char *argc[])

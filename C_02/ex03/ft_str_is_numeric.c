@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 14:49:51 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/13 14:58:31 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 19:07:34 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_str_numeric(char *str)
 		if (str[i] >= 48 && str[i] <= 57)
 			i++;
 		else
-			retun (0);
+			return (0);
 	}
 	return (1);
 }

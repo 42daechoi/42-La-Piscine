@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 15:16:00 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/11 16:48:01 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 15:53:00 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,10 @@ void	ft_print_comb(void)
 		}
 		a++;
 	}
+}
+
+int main()
+{
+	ft_print_comb();
+	return 0;
 }

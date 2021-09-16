@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 10:50:29 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/14 23:15:10 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/16 15:24:51 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void	ft_print_combn(int n)
 }
 
 int main() {
-	ft_print_combn(9);
+	ft_print_combn(3);
 	return 0;
 }
