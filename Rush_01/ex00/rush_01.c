@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:49:14 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/18 21:20:13 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/18 23:10:58 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,11 @@ void	ft_backtracking(int x, int y, int n)
 	int	j;
 
 	i = 0;
-	j = 0;
 	if (x == n + 1 && y == 1)
 	{
 		while (++i <= n)
 		{
+			j = 0;
 			while (++j <= n)
 			{
 				if (ft_is_correct(i, j, n) != 1)
