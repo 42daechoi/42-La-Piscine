@@ -6,13 +6,13 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:48:57 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/18 19:34:31 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/18 21:19:51 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 #include<unistd.h>
-#include "rush_01.h"
+#include "header.h"
 
 int	*g_input;
 int	**g_arr;
@@ -53,7 +53,7 @@ void	ft_set_arr_zero(int **arr, int length)
 	}
 }
 
-void	ft_set_input(int *g_input, char *argc)
+void	ft_set_input(int *input, char *argc)
 {
 	int	i;
 	int	j;
@@ -64,12 +64,23 @@ void	ft_set_input(int *g_input, char *argc)
 	{
 		if (i % 2 == 0)
 		{
-			g_input[j] = argc[i] - '0';
+			input[j] = argc[i] - '0';
 			j++;
 		}
 		i++;
 	}
 	g_input[j] = '\0';
+}
+
+void	ft_free_mem(int **arr, int *input, int length)
+{
+	int	i;
+
+	i = 0;
+	free(input);
+	while (i < length + 2)
+		free(arr[i++]);
+	free(arr);
 }
 
 int	main(int argv, char *argc[])
@@ -95,8 +106,7 @@ int	main(int argv, char *argc[])
 			ft_set_input(g_input, argc[1]);
 		}
 		ft_backtracking(1, 1, length);
-		free(g_arr);
-		free(g_input);
+		ft_free_mem(g_arr, g_input, length);
 	}
 	return (0);
 }
