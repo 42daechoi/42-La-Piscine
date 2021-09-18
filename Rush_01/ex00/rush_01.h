@@ -1,5 +1,17 @@
-extern int *input;
-extern int **arr;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush_01.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/18 18:49:30 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/18 18:55:24 by daechoi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+extern int *g_input;
+extern int **g_arr;
 void ft_putchar(char c);
 void ft_print(int n);
 int ft_up_is_correct(int x, int y, int n);
