@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:49:14 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/18 23:42:09 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/19 00:00:02 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	ft_print(int **arr)
 	int	j;
 
 	i = 0;
-	while (++i <= n)
+	while (++i <= g_length)
 	{
 		j = 0;
-		while (++j <= n)
+		while (++j <= g_length)
 		{
 			ft_putchar(arr[i][j] + '0');
-			if (j != n)
+			if (j != g_length)
 				ft_putchar(' ');
 		}
 		ft_putchar('\n');
@@ -46,13 +46,13 @@ int	ft_is_exist(int x, int y, int **arr)
 
 	target = arr[x][y];
 	i = 0;
-	while (++i <= n)
+	while (++i <= g_length)
 	{
 		if (i != y && arr[x][i] == target)
 			return (1);
 	}
 	i = 0;
-	while (++i <= n)
+	while (++i <= g_length)
 	{
 		if (i != x && arr[i][y] == target)
 			return (1);
@@ -66,12 +66,12 @@ void	ft_backtracking(int x, int y, int **arr, int *input)
 	int	j;
 
 	i = 0;
-	if (x == n + 1 && y == 1)
+	if (x == g_length + 1 && y == 1)
 	{
-		while (++i <= n)
+		while (++i <= g_length)
 		{
 			j = 0;
-			while (++j <= n)
+			while (++j <= g_length)
 			{
 				if (ft_is_correct(i, j, arr, input) != 1)
 					return ;
@@ -80,14 +80,14 @@ void	ft_backtracking(int x, int y, int **arr, int *input)
 		ft_print(arr);
 		return ;
 	}
-	if (x >= 1 && x <= n && y >= 1 && y <= n)
+	if (x >= 1 && x <= g_length && y >= 1 && y <= g_length)
 	{
-		while (++i <= n)
+		while (++i <= g_length)
 		{
 			arr[x][y] = i;
 			if (ft_is_exist(x, y, arr) == 0)
 			{
-				if (y != n)
+				if (y != g_length)
 					ft_backtracking(x, y + 1, arr, input);
 				else
 					ft_backtracking(x + 1, 1, arr, input);
