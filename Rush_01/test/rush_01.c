@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:49:14 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/19 00:00:02 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/19 13:19:10 by taeslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	ft_print(int **arr)
 	int	j;
 
 	i = 0;
+	j = 0;
+	if (arr[5][5] > 0)
+		return ;
 	while (++i <= g_length)
 	{
 		j = 0;
@@ -36,6 +39,7 @@ void	ft_print(int **arr)
 		}
 		ft_putchar('\n');
 	}
+	arr[5][5] = 1;
 	return ;
 }
 
@@ -60,24 +64,34 @@ int	ft_is_exist(int x, int y, int **arr)
 	return (0);
 }
 
-void	ft_backtracking(int x, int y, int **arr, int *input)
+void	ft_is_finish(int **arr, int *input)
 {
 	int	i;
 	int	j;
 
 	i = 0;
+	j = 0;
+	while (++i <= g_length)
+	{
+		j = 0;
+		while (++j <= g_length)
+		{
+			if (ft_is_correct(i, j, arr, input) != 1)
+				return ;
+		}
+	}
+	ft_print(arr);
+	return ;
+}
+
+void	ft_backtracking(int x, int y, int **arr, int *input)
+{
+	int	i;
+
+	i = 0;
 	if (x == g_length + 1 && y == 1)
 	{
-		while (++i <= g_length)
-		{
-			j = 0;
-			while (++j <= g_length)
-			{
-				if (ft_is_correct(i, j, arr, input) != 1)
-					return ;
-			}
-		}
-		ft_print(arr);
+		ft_is_finish(arr, input);
 		return ;
 	}
 	if (x >= 1 && x <= g_length && y >= 1 && y <= g_length)
@@ -95,5 +109,4 @@ void	ft_backtracking(int x, int y, int **arr, int *input)
 			arr[x][y] = 0;
 		}
 	}
-	return ;
 }

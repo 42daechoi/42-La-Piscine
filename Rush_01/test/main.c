@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:48:57 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/18 23:56:51 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/19 13:13:50 by taeslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include<unistd.h>
 #include "header.h"
 
-const int g_length = 4;
+const int	g_length = 4;
 
 int	ft_check_input(char *str)
 {
@@ -39,10 +39,10 @@ void	ft_set_arr_zero(int **arr)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (i < g_length + 2)
 	{
-		j = 0;
+		j = 1;
 		while (j < g_length + 2)
 		{
 			arr[i][j] = 0;
@@ -77,15 +77,15 @@ void	ft_free_mem(int **arr, int *input)
 
 	i = 0;
 	free(input);
-	while (i < g_length + 2)
-		free(arr[i++]);
+	while (++i < g_length + 2)
+		free(arr[i]);
 	free(arr);
 }
 
 int	main(int argv, char *argc[])
 {
-	int **arr;
-	int *input;
+	int	**arr;
+	int	*input;
 	int	i;
 
 	i = 0;
@@ -99,8 +99,8 @@ int	main(int argv, char *argc[])
 		{
 			input = (int *)malloc((g_length * 4) * sizeof(int));
 			arr = (int **)malloc((g_length + 2) * sizeof(int *));
-			while (i < g_length + 2)
-				arr[i++] = (int *)malloc((g_length + 2) * sizeof(int));
+			while (++i < g_length + 2)
+				arr[i] = (int *)malloc((g_length + 2) * sizeof(int));
 			ft_set_arr_zero(arr);
 			ft_set_input(input, argc[1]);
 			ft_backtracking(1, 1, arr, input);

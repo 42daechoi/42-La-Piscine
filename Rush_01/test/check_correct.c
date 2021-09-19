@@ -6,13 +6,13 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 20:31:41 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/19 00:00:33 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/19 12:13:10 by taeslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	ft_up_is_correct(int x, int y, int **arr, int *input)
+int	ft_up_is_correct(int y, int **arr, int *input)
 {
 	int	temp;
 	int	cnt;
@@ -34,7 +34,7 @@ int	ft_up_is_correct(int x, int y, int **arr, int *input)
 	return (1);
 }
 
-int	ft_down_is_correct(int x, int y, int **arr, int *input)
+int	ft_down_is_correct(int y, int **arr, int *input)
 {
 	int	temp;
 	int	cnt;
@@ -56,7 +56,7 @@ int	ft_down_is_correct(int x, int y, int **arr, int *input)
 	return (1);
 }
 
-int	ft_left_is_correct(int x, int y, int **arr, int *input)
+int	ft_left_is_correct(int x, int **arr, int *input)
 {
 	int	temp;
 	int	cnt;
@@ -78,7 +78,7 @@ int	ft_left_is_correct(int x, int y, int **arr, int *input)
 	return (1);
 }
 
-int	ft_right_is_correct(int x, int y, int **arr, int *input)
+int	ft_right_is_correct(int x, int **arr, int *input)
 {
 	int	temp;
 	int	cnt;
@@ -102,13 +102,13 @@ int	ft_right_is_correct(int x, int y, int **arr, int *input)
 
 int	ft_is_correct(int x, int y, int **arr, int *input)
 {
-	if (ft_up_is_correct(x, y, arr, input) == 0)
+	if (ft_up_is_correct(y, arr, input) == 0)
 		return (0);
-	if (ft_down_is_correct(x, y, arr, input) == 0)
+	if (ft_down_is_correct(y, arr, input) == 0)
 		return (0);
-	if (ft_left_is_correct(x, y, arr, input) == 0)
+	if (ft_left_is_correct(x, arr, input) == 0)
 		return (0);
-	if (ft_right_is_correct(x, y, arr, input) == 0)
+	if (ft_right_is_correct(x, arr, input) == 0)
 		return (0);
 	return (1);
 }
