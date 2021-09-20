@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 10:50:29 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/16 15:24:51 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/20 17:59:18 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_set_num(int *num, int digit, int n)
 		i = digit + 1;
 		while (i < n)
 		{
-			num[digit + 1] = num[digit] + 1;
+			num[i] = num[i - 1] + 1;
 			i++;
 		}
 		digit = n - 1;
@@ -70,6 +70,6 @@ void	ft_print_combn(int n)
 }
 
 int main() {
-	ft_print_combn(3);
+	ft_print_combn(8);
 	return 0;
 }

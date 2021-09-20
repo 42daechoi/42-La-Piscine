@@ -6,9 +6,11 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:59:05 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/20 18:10:36 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/20 17:53:39 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<unistd.h>
+#include<stdio.h>
 
 int	ft_check_str_len(char *str, char *base)
 {
@@ -110,4 +112,13 @@ int	ft_atoi_base(char *str, char *base)
 		correct_str_len--;
 	}
 	return (res * sign);
+}
+
+int main(int argv, char *argc[])
+{
+	if (argv != 3)
+		printf("input error");
+	else
+		printf("%d", ft_atoi_base(argc[1], argc[2]));
+	return 0;
 }
