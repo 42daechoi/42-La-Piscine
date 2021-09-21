@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 18:03:34 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/20 18:09:43 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/21 20:13:48 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -29,5 +29,5 @@ int	ft_iterative_factorial(int nb)
 
 int main()
 {
-	printf("%d", ft_iterative_factorial(4));
+	printf("%d", ft_iterative_factorial(0));
 }

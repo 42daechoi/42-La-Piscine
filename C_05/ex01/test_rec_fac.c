@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 18:11:37 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/20 18:16:26 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/21 19:36:09 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -25,5 +25,5 @@ int	ft_recursive_factorial(int nb)
 
 int main()
 {
-	printf("%d", ft_recursive_factorial(4));
+	printf("%d", ft_recursive_factorial(5));
 }
