@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 12:02:38 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/22 17:06:53 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/22 21:12:35 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/22 21:17:16 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#ifndef FT_H
+# define FT_H
 
-char	*ft_strdup(char *src)
-{
-	int		i;
-	char	*temp;
+void	ft_putchar(char c);
 
-	i = 0;
-	while (src[i])
-		i++;
-	temp = (char *)malloc(i * sizeof(char) + 1);
-	if (!temp)
-		return (0);
-	i = 0;
-	while (src[i])
-	{
-		temp[i] = src[i];
-		i++;
-	}
-	temp[i] = '\0';
-	return (temp);
-}
+void	ft_swap(int *a, int *b);
+
+void	ft_putstr(char *str);
+
+int		ft_strlen(char *str);
+
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

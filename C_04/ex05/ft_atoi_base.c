@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:59:05 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/20 18:10:36 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/22 17:52:01 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ int	ft_check_str_len(char *str, char *base)
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i])
+	j = 0;
+	while (base[j])
 	{
-		j = 0;
 		while (base[j] && str[i] != base[j])
 			j++;
 		if (base[j] == str[i])
 			cnt++;
-		else
-			return (cnt);
 		i++;
 	}
 	return (cnt);

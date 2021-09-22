@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 12:02:38 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/22 17:06:53 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/22 14:29:01 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/22 17:09:35 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-char	*ft_strdup(char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int		i;
-	char	*temp;
+	unsigned int	arr_len;
+	int				*arr;
+	int				i;
 
-	i = 0;
-	while (src[i])
-		i++;
-	temp = (char *)malloc(i * sizeof(char) + 1);
-	if (!temp)
-		return (0);
-	i = 0;
-	while (src[i])
+	if (min >= max)
 	{
-		temp[i] = src[i];
-		i++;
+		*range = 0;
+		return (0);
 	}
-	temp[i] = '\0';
-	return (temp);
+	arr_len = max - min;
+	arr = (int *)malloc(arr_len * sizeof(int));
+	if (!arr)
+		return (-1);
+	i = 0;
+	while (min < max)
+		arr[i++] = min++;
+	*range = arr;
+	return (arr_len);
 }

@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 12:02:38 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/22 17:06:53 by daechoi          ###   ########.fr       */
+/*   Created: 2021/09/22 21:18:48 by daechoi           #+#    #+#             */
+/*   Updated: 2021/09/22 22:06:12 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-char	*ft_strdup(char *src)
+# include <unistd.h>
+
+# define EVEN(nbr) !(nbr % 2)
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
+
+typedef enum e_bool
 {
-	int		i;
-	char	*temp;
+	TRUE,
+	FALSE
+}	t_bool;
 
-	i = 0;
-	while (src[i])
-		i++;
-	temp = (char *)malloc(i * sizeof(char) + 1);
-	if (!temp)
-		return (0);
-	i = 0;
-	while (src[i])
-	{
-		temp[i] = src[i];
-		i++;
-	}
-	temp[i] = '\0';
-	return (temp);
-}
+#endif
