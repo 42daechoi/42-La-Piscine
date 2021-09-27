@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 22:01:27 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/20 17:38:27 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/27 16:04:52 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
@@ -26,15 +26,16 @@ int	ft_base_len(char *base)
 void	ft_print_nbr_recursive(char *base, int nbr, int base_len)
 {
 	char	c;
+	unsigned int	n;
 
 	if (nbr < 0)
 	{
 		write(1, "-", 1);
-		nbr = (-nbr);
+		n = (-nbr);
 	}
-	if (nbr >= base_len)
-		ft_print_nbr_recursive(base, nbr / base_len, base_len);}
-	c = base[nbr % base_len];
+	if (n >= (unsigned int)base_len)
+		ft_print_nbr_recursive(base, (int)n / base_len, base_len);
+	c = base[n % base_len];
 	write(1, &c, 1);
 }
 
