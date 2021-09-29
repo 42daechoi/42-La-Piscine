@@ -6,7 +6,7 @@
 /*   By: daechoi <daechoi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 18:39:29 by daechoi           #+#    #+#             */
-/*   Updated: 2021/09/26 01:40:29 by daechoi          ###   ########.fr       */
+/*   Updated: 2021/09/29 16:50:12 by daechoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "header.h"
@@ -27,6 +27,9 @@ void	ft_set_square_len(int **num_arr, t_mapinfo mi)
 {
 	int	i;
 	int	j;
+	int	a;
+	int	b;
+	int	c;
 
 	i = 1;
 	while (i < mi.x_len)
@@ -36,8 +39,10 @@ void	ft_set_square_len(int **num_arr, t_mapinfo mi)
 		{
 			if (num_arr[i][j] != 0)
 			{
-				num_arr[i][j] \
-				   	= ft_min(num_arr[i][j - 1], num_arr[i - 1][j], num_arr[i - 1][j - 1]) + 1;
+				a = num_arr[i][j - 1];
+				b = num_arr[i - 1][j];
+				c = num_arr[i - 1][j - 1];
+				num_arr[i][j] = ft_min(a, b, c) + 1;
 			}
 			j++;
 		}
@@ -82,26 +87,29 @@ void	ft_put_arr(char *buff, char **arr, t_mapinfo mi)
 			if (buff[k] == '\n')
 				k++;
 			arr[i][j] = buff[k];
-			printf("%c ", arr[i][j]);
 			j++;
 			k++;
 		}
-		printf("\n");
 		i++;
 	}
-	printf("\n");
 }
 
 void	ft_set_map(char *buff, char **arr, t_mapinfo mi)
 {
-	int	**num_arr;
-	t_maxinfo maxinfo;
+	int			**num_arr;
+	t_maxinfo	maxinfo;
 
+	num_arr = NULL;
 	ft_put_arr(buff, arr, mi);
+	if (!ft_check_arr(arr, mi))
+	{
+		ft_err_msg();
+		return ;
+	}
 	num_arr = ft_do_intmalloc(num_arr, mi);
 	ft_change_arr_to_num(arr, num_arr, mi);
 	ft_set_square_len(num_arr, mi);
 	ft_find_biggest(num_arr, mi, &maxinfo);
 	ft_filled_map(arr, mi, maxinfo);
-	//num_arr = ft_intfree(num_arr, mi);
+	ft_intfree(num_arr, mi);
 }
